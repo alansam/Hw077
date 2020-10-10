@@ -23,9 +23,9 @@ int main(int argc, char const * argv[]) {
 
   char carry[9] = { 'd', 'e', 'a', 'd', 'b', 'e', 'e', 'f', '\0', };
   size_t carry_sz = sizeof(carry);
-  short sarry[2] = { SHRT_MIN, SHRT_MAX, };
+  short sarry[2] = { 0xadde, 0xefbe, };
   size_t sarry_sz = sizeof(sarry);
-  int iarry[2] = { INT_MIN, INT_MAX, };
+  int iarry[2] = { 0xefbeadde, 0xdeadbeef, };
   size_t iarry_sz = sizeof(iarry);
 
   strcpy(a0.name, "cap");
