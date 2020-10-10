@@ -1,19 +1,48 @@
-   cap - 0x7ffcaa495767, 0x7ffcaa495770,   9 [0x0009]
-   sap - 0x7ffcaa495754, 0x7ffcaa495758,   4 [0x0004]
-  snap - 0x7ffcaa495754, 0x7ffcaa495770,  28 [0x001c]
-0x7ffcaa495754:
+# Output from LLVM clang
+# $ clang-7 -pthread -lm -std=gnu11 -o main main.c snap.c
+
+   cap - 0x7ffc0a775cf7, 0x7ffc0a775d00,   9 [0x0009]
+   sap - 0x7ffc0a775ce4, 0x7ffc0a775ce8,   4 [0x0004]
+  snap - 0x7ffc0a775ce4, 0x7ffc0a775d00,  28 [0x001c]
+0x7ffc0a775ce4:
 0000: deadbeef09000000 0000000000000000 0000006465616462 65656600          ........ ........ ...deadb eef.     
 
-   sap - 0x7ffcaa495754, 0x7ffcaa495758,   4 [0x0004]
-   iap - 0x7ffcaa495740, 0x7ffcaa495748,   8 [0x0008]
-  snap - 0x7ffcaa495740, 0x7ffcaa495758,  24 [0x0018]
-0x7ffcaa495740:
+   sap - 0x7ffc0a775ce4, 0x7ffc0a775ce8,   4 [0x0004]
+   iap - 0x7ffc0a775cd0, 0x7ffc0a775cd8,   8 [0x0008]
+  snap - 0x7ffc0a775cd0, 0x7ffc0a775ce8,  24 [0x0018]
+0x7ffc0a775cd0:
 0000: deadbeefefbeadde 0400000000000000 00000000deadbeef                   ........ ........ ........          
 
-   cap - 0x7ffcaa495767, 0x7ffcaa495770,   9 [0x0009]
-   iap - 0x7ffcaa495740, 0x7ffcaa495748,   8 [0x0008]
-  snap - 0x7ffcaa495740, 0x7ffcaa495770,  48 [0x0030]
-0x7ffcaa495740:
+   cap - 0x7ffc0a775cf7, 0x7ffc0a775d00,   9 [0x0009]
+   iap - 0x7ffc0a775cd0, 0x7ffc0a775cd8,   8 [0x0008]
+  snap - 0x7ffc0a775cd0, 0x7ffc0a775d00,  48 [0x0030]
+0x7ffc0a775cd0:
 0000: deadbeefefbeadde 0400000000000000 00000000deadbeef 0900000000000000  ........ ........ ........ ........ 
 0020: 0000000000000064 6561646265656600                                    .......d eadbeef.                   
+
+# Output from GNU gcc
+# $ gcc-7 -pthread -lm -std=gnu11 -o main main.c snap.c
+
+   cap - 0x7ffee8b0ff5f, 0x7ffee8b0ff68,   9 [0x0009]
+   sap - 0x7ffee8b0ff04, 0x7ffee8b0ff08,   4 [0x0004]
+  snap - 0x7ffee8b0ff04, 0x7ffee8b0ff68, 100 [0x0064]
+0x7ffee8b0ff04:
+0000: deadbeefdeadbeef efbeadde63617000 0000000060a68f9b ba7f00005fffb0e8  ........ ....cap. ....`... ...._... 
+0020: fe7f000009000000 0000000073617000 000000008d9dcc0d de55000004ffb0e8  ........ ....sap. ........ .U...... 
+0040: fe7f000004000000 00000000409dcc0d de5500009096cc0d de55006465616462  ........ ....@... .U...... .U.deadb 
+0060: 65656600                                                             eef.                                
+
+   sap - 0x7ffee8b0ff04, 0x7ffee8b0ff08,   4 [0x0004]
+   iap - 0x7ffee8b0ff08, 0x7ffee8b0ff10,   8 [0x0008]
+  snap - 0x7ffee8b0ff04, 0x7ffee8b0ff10,  12 [0x000c]
+0x7ffee8b0ff04:
+0000: deadbeefdeadbeef efbeadde                                            ........ ....                       
+
+   cap - 0x7ffee8b0ff5f, 0x7ffee8b0ff68,   9 [0x0009]
+   iap - 0x7ffee8b0ff08, 0x7ffee8b0ff10,   8 [0x0008]
+  snap - 0x7ffee8b0ff08, 0x7ffee8b0ff68,  96 [0x0060]
+0x7ffee8b0ff08:
+0000: deadbeefefbeadde 6361700000000000 60a68f9bba7f0000 5fffb0e8fe7f0000  ........ cap..... `....... _....... 
+0020: 0900000000000000 6961700000000000 8d9dcc0dde550000 08ffb0e8fe7f0000  ........ iap..... .....U.. ........ 
+0040: 0800000000000000 409dcc0dde550000 9096cc0dde550064 6561646265656600  ........ @....U.. .....U.d eadbeef. 
 
