@@ -1,0 +1,19 @@
+   cap - 0x7ffcaa495767, 0x7ffcaa495770,   9 [0x0009]
+   sap - 0x7ffcaa495754, 0x7ffcaa495758,   4 [0x0004]
+  snap - 0x7ffcaa495754, 0x7ffcaa495770,  28 [0x001c]
+0x7ffcaa495754:
+0000: deadbeef09000000 0000000000000000 0000006465616462 65656600          ........ ........ ...deadb eef.     
+
+   sap - 0x7ffcaa495754, 0x7ffcaa495758,   4 [0x0004]
+   iap - 0x7ffcaa495740, 0x7ffcaa495748,   8 [0x0008]
+  snap - 0x7ffcaa495740, 0x7ffcaa495758,  24 [0x0018]
+0x7ffcaa495740:
+0000: deadbeefefbeadde 0400000000000000 00000000deadbeef                   ........ ........ ........          
+
+   cap - 0x7ffcaa495767, 0x7ffcaa495770,   9 [0x0009]
+   iap - 0x7ffcaa495740, 0x7ffcaa495748,   8 [0x0008]
+  snap - 0x7ffcaa495740, 0x7ffcaa495770,  48 [0x0030]
+0x7ffcaa495740:
+0000: deadbeefefbeadde 0400000000000000 00000000deadbeef 0900000000000000  ........ ........ ........ ........ 
+0020: 0000000000000064 6561646265656600                                    .......d eadbeef.                   
+
